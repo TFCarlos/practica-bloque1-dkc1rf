@@ -390,11 +390,7 @@ function createList() {
 
 // Click body
 let bodyClick = document.getElementsByTagName("body")[0];
-let listaBotones = document.querySelector(".color-list");
-console.log(bodyClick);
 
 bodyClick.addEventListener("click", function(decirAlerta) {
-  if (decirAlerta.target != listaBotones) {
-    alert("Body");
-  }
+  if (decirAlerta.target == bodyClick) alert("Body");
 });
