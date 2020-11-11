@@ -61,13 +61,6 @@ const colorList = [
   }
 ];
 
-// Click body
-let body = document.querySelector(".color-list").parentNode;
-
-body.addEventListener("click", function(decirAlerta) {
-  if (decirAlerta.target == body) alert("Body");
-});
-
 createList();
 function createList() {
   let pointer = document.querySelector(".color-list");
@@ -340,6 +333,7 @@ function createList() {
 
   pointer.appendChild(li8);
 
+  // Set next item color
   button1_1.addEventListener("click", function(alertaSetWhite) {
     li2.style.backgroundColor = "White";
   });
@@ -364,4 +358,43 @@ function createList() {
   button8_1.addEventListener("click", function(alertaSetSilver) {
     li1.style.backgroundColor = "Silver";
   });
+
+  // Set body background colorList
+  let bodyBack = document.querySelector(".color-list").parentNode;
+
+  button1_2.addEventListener("click", function(backSetWhite) {
+    bodyBack.style.backgroundColor = "White";
+  });
+  button2_2.addEventListener("click", function(backSetRed) {
+    bodyBack.style.backgroundColor = "Red";
+  });
+  button3_2.addEventListener("click", function(backSetOrange) {
+    bodyBack.style.backgroundColor = "Orange";
+  });
+  button4_2.addEventListener("click", function(backSetYellow) {
+    bodyBack.style.backgroundColor = "Yellow";
+  });
+  button5_2.addEventListener("click", function(backSetOrchid) {
+    bodyBack.style.backgroundColor = "Orchid";
+  });
+  button6_2.addEventListener("click", function(backSetPink) {
+    bodyBack.style.backgroundColor = "Pink";
+  });
+  button7_2.addEventListener("click", function(backSetGreen) {
+    bodyBack.style.backgroundColor = "Green";
+  });
+  button8_2.addEventListener("click", function(backSetSilver) {
+    bodyBack.style.backgroundColor = "Silver";
+  });
 }
+
+// Click body
+let bodyClick = document.getElementsByTagName("body")[0];
+let listaBotones = document.querySelector(".color-list");
+console.log(bodyClick);
+
+bodyClick.addEventListener("click", function(decirAlerta) {
+  if (decirAlerta.target != listaBotones) {
+    alert("Body");
+  }
+});
