@@ -61,12 +61,18 @@ const colorList = [
   }
 ];
 
+// Click body
+let body = document.querySelector(".color-list").parentNode;
+
+body.addEventListener("click", function(decirAlerta) {
+  if (decirAlerta.target == body) alert("Body");
+});
+
 createList();
 function createList() {
   let pointer = document.querySelector(".color-list");
-  console.log(pointer);
 
-  //Primera row ODD
+  //Primera row PAIR
   let div1_1 = document.createElement("DIV");
   div1_1.classList.add("color-name");
   div1_1.innerHTML = "Color: white";
@@ -86,7 +92,11 @@ function createList() {
 
   let li1 = document.createElement("LI");
   li1.classList.add("color-item");
-  li1.classList.add("color-item--odd");
+
+  //Alerta de color
+  div1_1.addEventListener("click", function(alertaWhite) {
+    alert("White");
+  });
 
   li1.appendChild(div1_1);
   li1.appendChild(div1_2);
@@ -95,7 +105,7 @@ function createList() {
 
   pointer.appendChild(li1);
 
-  //Segunda row PAIR
+  //Segunda row ODD
   let div2_1 = document.createElement("DIV");
   div2_1.classList.add("color-name");
   div2_1.innerHTML = "Color: red";
@@ -115,6 +125,12 @@ function createList() {
 
   let li2 = document.createElement("LI");
   li2.classList.add("color-item");
+  li2.classList.add("color-item--odd");
+
+  //Alerta de color
+  div2_1.addEventListener("click", function(alertRed) {
+    alert("Red");
+  });
 
   li2.appendChild(div2_1);
   li2.appendChild(div2_2);
@@ -123,7 +139,7 @@ function createList() {
 
   pointer.appendChild(li2);
 
-  //Tercera row ODD
+  //Tercera row PAIR
   let div3_1 = document.createElement("DIV");
   div3_1.classList.add("color-name");
   div3_1.innerHTML = "Color: orange";
@@ -143,7 +159,11 @@ function createList() {
 
   let li3 = document.createElement("LI");
   li3.classList.add("color-item");
-  li3.classList.add("color-item--odd");
+
+  //Alerta de color
+  div3_1.addEventListener("click", function(alertaOrange) {
+    alert("Orange");
+  });
 
   li3.appendChild(div3_1);
   li3.appendChild(div3_2);
@@ -152,7 +172,7 @@ function createList() {
 
   pointer.appendChild(li3);
 
-  //Cuarta row PAIR
+  //Cuarta row ODD
   let div4_1 = document.createElement("DIV");
   div4_1.classList.add("color-name");
   div4_1.innerHTML = "Color: yellow";
@@ -172,6 +192,12 @@ function createList() {
 
   let li4 = document.createElement("LI");
   li4.classList.add("color-item");
+  li4.classList.add("color-item--odd");
+
+  //Alerta de color
+  div4_1.addEventListener("click", function(alertaYellow) {
+    alert("Yellow");
+  });
 
   li4.appendChild(div4_1);
   li4.appendChild(div4_2);
@@ -180,7 +206,7 @@ function createList() {
 
   pointer.appendChild(li4);
 
-  //Quinta row OOD
+  //Quinta row PAIR
   let div5_1 = document.createElement("DIV");
   div5_1.classList.add("color-name");
   div5_1.innerHTML = "Color: orchid";
@@ -200,7 +226,11 @@ function createList() {
 
   let li5 = document.createElement("LI");
   li5.classList.add("color-item");
-  li5.classList.add("color-item--odd");
+
+  //Alerta de color
+  div5_1.addEventListener("click", function(alertaOrchid) {
+    alert("Orchid");
+  });
 
   li5.appendChild(div5_1);
   li5.appendChild(div5_2);
@@ -209,7 +239,7 @@ function createList() {
 
   pointer.appendChild(li5);
 
-  //Sexta row PAIR
+  //Sexta row ODD
   let div6_1 = document.createElement("DIV");
   div6_1.classList.add("color-name");
   div6_1.innerHTML = "Color: pink";
@@ -229,6 +259,12 @@ function createList() {
 
   let li6 = document.createElement("LI");
   li6.classList.add("color-item");
+  li6.classList.add("color-item--odd");
+
+  //Alerta de color
+  div6_1.addEventListener("click", function(alertaPink) {
+    alert("Pink");
+  });
 
   li6.appendChild(div6_1);
   li6.appendChild(div6_2);
@@ -237,7 +273,7 @@ function createList() {
 
   pointer.appendChild(li6);
 
-  //Septima row ODD
+  //Septima row PAIR
   let div7_1 = document.createElement("DIV");
   div7_1.classList.add("color-name");
   div7_1.innerHTML = "Color: green";
@@ -257,7 +293,11 @@ function createList() {
 
   let li7 = document.createElement("LI");
   li7.classList.add("color-item");
-  li7.classList.add("color-item--odd");
+
+  //Alerta de color
+  div7_1.addEventListener("click", function(alertaGreen) {
+    alert("Green");
+  });
 
   li7.appendChild(div7_1);
   li7.appendChild(div7_2);
@@ -266,7 +306,7 @@ function createList() {
 
   pointer.appendChild(li7);
 
-  //Octava row PAIR
+  //Octava row ODD
   let div8_1 = document.createElement("DIV");
   div8_1.classList.add("color-name");
   div8_1.innerHTML = "Color: silver";
@@ -286,6 +326,12 @@ function createList() {
 
   let li8 = document.createElement("LI");
   li8.classList.add("color-item");
+  li8.classList.add("color-item--odd");
+
+  //Alerta de color
+  div8_1.addEventListener("click", function(alertaSilver) {
+    alert("Silver");
+  });
 
   li8.appendChild(div8_1);
   li8.appendChild(div8_2);
@@ -293,4 +339,29 @@ function createList() {
   li8.appendChild(button8_2);
 
   pointer.appendChild(li8);
+
+  button1_1.addEventListener("click", function(alertaSetWhite) {
+    li2.style.backgroundColor = "White";
+  });
+  button2_1.addEventListener("click", function(alertaSetRed) {
+    li3.style.backgroundColor = "Red";
+  });
+  button3_1.addEventListener("click", function(alertaSetOrange) {
+    li4.style.backgroundColor = "Orange";
+  });
+  button4_1.addEventListener("click", function(alertaSetYellow) {
+    li5.style.backgroundColor = "Yellow";
+  });
+  button5_1.addEventListener("click", function(alertaSetOrchid) {
+    li6.style.backgroundColor = "Orchid";
+  });
+  button6_1.addEventListener("click", function(alertaSetPink) {
+    li7.style.backgroundColor = "Pink";
+  });
+  button7_1.addEventListener("click", function(alertaSetGreen) {
+    li8.style.backgroundColor = "Green";
+  });
+  button8_1.addEventListener("click", function(alertaSetSilver) {
+    li1.style.backgroundColor = "Silver";
+  });
 }
