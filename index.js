@@ -1,5 +1,5 @@
 // CONTENIDO DE LA PRÁCTICA:
-// Vamos a añadir elementos en una lista (con la clase "color-list") con javascript a partir del array aportado en este documento, en la constante "colorList" (ver imagen en el proyecto "ejemplo_lista.png"). 
+// Vamos a añadir elementos en una lista (con la clase "color-list") con javascript a partir del array aportado en este documento, en la constante "colorList" (ver imagen en el proyecto "ejemplo_lista.png").
 
 // Como se puede apreciar en la imagen, cada elemento que esté en una posición par de de la lista tiene que tener la clase "color-item--odd". Esta clase debe añadirse desde javascript, NO haciendo uso del selector css nth-of-type(odd) o similares. NOTA: En este caso vamos a considerar un elemento par pensando en el primer elemento como el 1 no como el 0.
 
@@ -28,35 +28,269 @@
 
 const colorList = [
   {
-    colorName: 'white',
-    hex: '#ffffff'
+    colorName: "white",
+    hex: "#ffffff"
   },
   {
-    colorName: 'red',
-    hex: '#ff0000'
+    colorName: "red",
+    hex: "#ff0000"
   },
   {
-    colorName: 'orange',
-    hex: '#ffa500'
+    colorName: "orange",
+    hex: "#ffa500"
   },
   {
-    colorName: 'yellow',
-    hex: '#ffff00'
+    colorName: "yellow",
+    hex: "#ffff00"
   },
   {
-    colorName: 'orchid',
-    hex: '#da70d6'
+    colorName: "orchid",
+    hex: "#da70d6"
   },
   {
-    colorName: 'pink',
-    hex: '#ffc0cb'
+    colorName: "pink",
+    hex: "#ffc0cb"
   },
   {
-    colorName: 'green',
-    hex: '#008000'
+    colorName: "green",
+    hex: "#008000"
   },
   {
-    colorName: 'silver',
-    hex: '#c0c0c0'
+    colorName: "silver",
+    hex: "#c0c0c0"
   }
 ];
+
+createList();
+function createList() {
+  let pointer = document.querySelector(".color-list");
+  console.log(pointer);
+
+  //Primera row ODD
+  let div1_1 = document.createElement("DIV");
+  div1_1.classList.add("color-name");
+  div1_1.innerHTML = "Color: white";
+
+  let div1_2 = document.createElement("DIV");
+  div1_2.classList.add("color-show");
+  div1_2.innerHTML = "Muestra";
+  div1_2.style.backgroundColor = "White";
+
+  let button1_1 = document.createElement("BUTTON");
+  button1_1.classList.add("color-set");
+  button1_1.innerHTML = "Next item color";
+
+  let button1_2 = document.createElement("BUTTON");
+  button1_2.classList.add("color-set");
+  button1_2.innerHTML = "Page color";
+
+  let li1 = document.createElement("LI");
+  li1.classList.add("color-item");
+  li1.classList.add("color-item--odd");
+
+  li1.appendChild(div1_1);
+  li1.appendChild(div1_2);
+  li1.appendChild(button1_1);
+  li1.appendChild(button1_2);
+
+  pointer.appendChild(li1);
+
+  //Segunda row PAIR
+  let div2_1 = document.createElement("DIV");
+  div2_1.classList.add("color-name");
+  div2_1.innerHTML = "Color: red";
+
+  let div2_2 = document.createElement("DIV");
+  div2_2.classList.add("color-show");
+  div2_2.innerHTML = "Muestra";
+  div2_2.style.backgroundColor = "Red";
+
+  let button2_1 = document.createElement("BUTTON");
+  button2_1.classList.add("color-set");
+  button2_1.innerHTML = "Next item color";
+
+  let button2_2 = document.createElement("BUTTON");
+  button2_2.classList.add("color-set");
+  button2_2.innerHTML = "Page color";
+
+  let li2 = document.createElement("LI");
+  li2.classList.add("color-item");
+
+  li2.appendChild(div2_1);
+  li2.appendChild(div2_2);
+  li2.appendChild(button2_1);
+  li2.appendChild(button2_2);
+
+  pointer.appendChild(li2);
+
+  //Tercera row ODD
+  let div3_1 = document.createElement("DIV");
+  div3_1.classList.add("color-name");
+  div3_1.innerHTML = "Color: orange";
+
+  let div3_2 = document.createElement("DIV");
+  div3_2.classList.add("color-show");
+  div3_2.innerHTML = "Muestra";
+  div3_2.style.backgroundColor = "Orange";
+
+  let button3_1 = document.createElement("BUTTON");
+  button3_1.classList.add("color-set");
+  button3_1.innerHTML = "Next item color";
+
+  let button3_2 = document.createElement("BUTTON");
+  button3_2.classList.add("color-set");
+  button3_2.innerHTML = "Page color";
+
+  let li3 = document.createElement("LI");
+  li3.classList.add("color-item");
+  li3.classList.add("color-item--odd");
+
+  li3.appendChild(div3_1);
+  li3.appendChild(div3_2);
+  li3.appendChild(button3_1);
+  li3.appendChild(button3_2);
+
+  pointer.appendChild(li3);
+
+  //Cuarta row PAIR
+  let div4_1 = document.createElement("DIV");
+  div4_1.classList.add("color-name");
+  div4_1.innerHTML = "Color: yellow";
+
+  let div4_2 = document.createElement("DIV");
+  div4_2.classList.add("color-show");
+  div4_2.innerHTML = "Muestra";
+  div4_2.style.backgroundColor = "Yellow";
+
+  let button4_1 = document.createElement("BUTTON");
+  button4_1.classList.add("color-set");
+  button4_1.innerHTML = "Next item color";
+
+  let button4_2 = document.createElement("BUTTON");
+  button4_2.classList.add("color-set");
+  button4_2.innerHTML = "Page color";
+
+  let li4 = document.createElement("LI");
+  li4.classList.add("color-item");
+
+  li4.appendChild(div4_1);
+  li4.appendChild(div4_2);
+  li4.appendChild(button4_1);
+  li4.appendChild(button4_2);
+
+  pointer.appendChild(li4);
+
+  //Quinta row OOD
+  let div5_1 = document.createElement("DIV");
+  div5_1.classList.add("color-name");
+  div5_1.innerHTML = "Color: orchid";
+
+  let div5_2 = document.createElement("DIV");
+  div5_2.classList.add("color-show");
+  div5_2.innerHTML = "Muestra";
+  div5_2.style.backgroundColor = "Orchid";
+
+  let button5_1 = document.createElement("BUTTON");
+  button5_1.classList.add("color-set");
+  button5_1.innerHTML = "Next item color";
+
+  let button5_2 = document.createElement("BUTTON");
+  button5_2.classList.add("color-set");
+  button5_2.innerHTML = "Page color";
+
+  let li5 = document.createElement("LI");
+  li5.classList.add("color-item");
+  li5.classList.add("color-item--odd");
+
+  li5.appendChild(div5_1);
+  li5.appendChild(div5_2);
+  li5.appendChild(button5_1);
+  li5.appendChild(button5_2);
+
+  pointer.appendChild(li5);
+
+  //Sexta row PAIR
+  let div6_1 = document.createElement("DIV");
+  div6_1.classList.add("color-name");
+  div6_1.innerHTML = "Color: pink";
+
+  let div6_2 = document.createElement("DIV");
+  div6_2.classList.add("color-show");
+  div6_2.innerHTML = "Muestra";
+  div6_2.style.backgroundColor = "Pink";
+
+  let button6_1 = document.createElement("BUTTON");
+  button6_1.classList.add("color-set");
+  button6_1.innerHTML = "Next item color";
+
+  let button6_2 = document.createElement("BUTTON");
+  button6_2.classList.add("color-set");
+  button6_2.innerHTML = "Page color";
+
+  let li6 = document.createElement("LI");
+  li6.classList.add("color-item");
+
+  li6.appendChild(div6_1);
+  li6.appendChild(div6_2);
+  li6.appendChild(button6_1);
+  li6.appendChild(button6_2);
+
+  pointer.appendChild(li6);
+
+  //Septima row ODD
+  let div7_1 = document.createElement("DIV");
+  div7_1.classList.add("color-name");
+  div7_1.innerHTML = "Color: green";
+
+  let div7_2 = document.createElement("DIV");
+  div7_2.classList.add("color-show");
+  div7_2.innerHTML = "Muestra";
+  div7_2.style.backgroundColor = "Green";
+
+  let button7_1 = document.createElement("BUTTON");
+  button7_1.classList.add("color-set");
+  button7_1.innerHTML = "Next item color";
+
+  let button7_2 = document.createElement("BUTTON");
+  button7_2.classList.add("color-set");
+  button7_2.innerHTML = "Page color";
+
+  let li7 = document.createElement("LI");
+  li7.classList.add("color-item");
+  li7.classList.add("color-item--odd");
+
+  li7.appendChild(div7_1);
+  li7.appendChild(div7_2);
+  li7.appendChild(button7_1);
+  li7.appendChild(button7_2);
+
+  pointer.appendChild(li7);
+
+  //Octava row PAIR
+  let div8_1 = document.createElement("DIV");
+  div8_1.classList.add("color-name");
+  div8_1.innerHTML = "Color: silver";
+
+  let div8_2 = document.createElement("DIV");
+  div8_2.classList.add("color-show");
+  div8_2.innerHTML = "Muestra";
+  div8_2.style.backgroundColor = "Silver";
+
+  let button8_1 = document.createElement("BUTTON");
+  button8_1.classList.add("color-set");
+  button8_1.innerHTML = "Next item color";
+
+  let button8_2 = document.createElement("BUTTON");
+  button8_2.classList.add("color-set");
+  button8_2.innerHTML = "Page color";
+
+  let li8 = document.createElement("LI");
+  li8.classList.add("color-item");
+
+  li8.appendChild(div8_1);
+  li8.appendChild(div8_2);
+  li8.appendChild(button8_1);
+  li8.appendChild(button8_2);
+
+  pointer.appendChild(li8);
+}
